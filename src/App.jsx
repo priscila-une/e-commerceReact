@@ -1,15 +1,21 @@
-import Footer from "./components/Footer/Footer"
-import Header from "./components/Header/Header"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./Layout";
+import Home from "./pages/Home";
+import Cart from "./pages/Cart";
 
 function App() {
 
   return (
     <>
-      <Header />
-      <div className="h-screen">
-        <p>Produtos</p>
-      </div>
-      <Footer />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />} >
+            <Route path="/home" element={<Home />}/>
+            <Route path="/cart" element={<Cart />} />
+          </Route>
+          
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
