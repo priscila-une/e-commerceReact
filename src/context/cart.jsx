@@ -1,23 +1,25 @@
 import { createContext, useState, useEffect } from 'react';
+import PropTypes from "prop-types";
 
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems ] = useState(localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : [])
 
-  const addToCart = (product) => {
-    const isItemInCart = cartItems.find((cartItem) => cartItem.id === product.id); 
-
+  const addToCart = (item) => {
+    
+    const isItemInCart = cartItems.find((cartItem) => cartItem.id === item.id);
+    
     if (isItemInCart) {
       setCartItems(
         cartItems.map((cartItem) =>
-        cartItem.id === product.id
+        cartItem.id === item.id
             ? { ...cartItem, quantity: cartItem.quantity + 1 }
             : cartItem
         )
       );
     } else {
-      setCartItems([...cartItems, { ...product, quantity: 1 }]);
+      setCartItems([...cartItems, { ...item, quantity: 1 }]);
     }
   }
 
@@ -38,7 +40,7 @@ export const CartProvider = ({ children }) => {
   }
 
   const getCartTotal = () => {
-    return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+    return cartItems.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
   };
   
 
@@ -66,4 +68,8 @@ export const CartProvider = ({ children }) => {
      {children}
     </CartContext.Provider>
   )
+}
+
+CartProvider.propTypes = {
+  children: PropTypes.node
 }
