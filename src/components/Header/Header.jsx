@@ -1,5 +1,5 @@
 import { CircleUserRound, ShoppingCart, Search } from "lucide-react";
-import { Link, redirect } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Modal from "../Modal/Modal";
 import { useState } from "react";
 import { CartContext } from "../../context/cart";
@@ -8,6 +8,7 @@ import { useContext } from "react";
 export default function Header() {
   const [ showModal, setShowModal ] = useState(false);
   const { cartItems, addToCart, removeToCart, getCartTotal } = useContext(CartContext);
+  const navigate = useNavigate();
 
   const toggle = () => {
     setShowModal(!showModal);
@@ -16,7 +17,7 @@ export default function Header() {
     return (
       <>
        <header className="flex justify-between p-5 bg-slate-900 text-gray-100">
-          <Link to="/home">
+          <Link to="/">
             <h1>LOJINHA</h1>
           </Link>
 
@@ -65,7 +66,7 @@ export default function Header() {
                     <button className="border bg-green-300 p-2 rounded-sm font-semibold"
                       onClick={() => {
                         setShowModal(false);
-                        redirect("/cart")
+                        navigate("/cart")
                       }}
                     >finalizar pedido</button>
                    </div>
