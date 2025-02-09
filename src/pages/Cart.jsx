@@ -1,5 +1,7 @@
 export default function Cart(){
     return (
-        <div>Carrinho  </div>
+        <div>
+            Checkout aquii
+        </div>
     )
 }
