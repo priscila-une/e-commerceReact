@@ -22,10 +22,10 @@ export default function Home(){
                className="max-w-5xl rounded-lg"
             >
                 <SwiperSlide className="max-w-5xl">
-                    <img src="./src/assets/sale1.jpg" alt="sale image" className="w-full "/>
+                    <img src="https://images.unsplash.com/photo-1572584642822-6f8de0243c93?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="sale image" className="w-full "/>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img src="./src/assets/sale2.jpg" alt="sale image" className="w-full"/>
+                    <img src="https://images.unsplash.com/photo-1607083206869-4c7672e72a8a?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="sale image" className="w-full"/>
                 </SwiperSlide>
             </Swiper>
 
