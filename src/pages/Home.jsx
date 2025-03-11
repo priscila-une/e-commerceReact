@@ -7,7 +7,11 @@ import 'swiper/css/effect-fade';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
+
+
+
 export default function Home(){
+
     return (
         <div className="p-2">
 
@@ -30,8 +34,11 @@ export default function Home(){
             </Swiper>
 
            <div className="flex flex-col p-3 gap-4">
+           
             <h1 className="text-2xl font-bold text-center">Nossos produtos</h1>
-			<ProductCard />
+
+		
+             <ProductCard />
            </div>
         </div>
     )
