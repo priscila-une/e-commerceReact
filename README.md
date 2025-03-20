@@ -11,9 +11,10 @@ O objetivo deste desafio é criar uma aplicação que simule as funcionalidades 
 - [X] Carrinho de compras, incluindo ajuste de quantidades e exibição de itens selecionados.
 
 ## Funcionalidades extras next steps
- - [ ] Adicionar filtros (categorias, etc)
+ - [X] Adicionar filtros (categorias, etc)
+ - [X] Adicionar toaster.
  - [ ] Barra de pesquisa funcional
- - [ ] Adicionar Paginação de produtos
+ - [X] Adicionar Paginação de produtos
  - [ ] implementar página de checkout
  - [ ] Adiconar página de login e cadastrar
  - [ ] Autenticação com JWT
