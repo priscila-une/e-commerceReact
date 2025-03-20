@@ -1,4 +1,4 @@
-import { CircleUserRound, ShoppingCart, Search } from "lucide-react";
+import { CircleUserRound, ShoppingCart } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import Modal from "../Modal/Modal";
 import { useState } from "react";
@@ -21,10 +21,10 @@ export default function Header() {
             <h1>LOJINHA</h1>
           </Link>
 
-          <form action="" className="flex items-center gap-1 w-80">
+          {/* <form action="" className="flex items-center gap-1 w-80">
               <input type="text" className="w-full"/>
               <Search />
-          </form>
+          </form> */}
 
           <div className="flex gap-2">
               <CircleUserRound />
