@@ -3,6 +3,7 @@ import { CartContext } from '../../context/cart';
 import Pagination from '../Pagination/Pagination';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
+import { Bounce, ToastContainer} from 'react-toastify';
 
 export default function ProductCard() {
   const [products, setProducts] = useState([]);
@@ -16,7 +17,7 @@ export default function ProductCard() {
   const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
   const nPages = Math.ceil(products.length / productsPerPage);
 
-
+ 
   async function getProducts() {
     try {
         setLoading(true)
@@ -37,6 +38,7 @@ export default function ProductCard() {
         const data = await response.json()
 
         setProducts(data.products);
+        setCurrentPage(1)
         setLoading(false);
     } catch (error) {
         console.log(error)
@@ -98,8 +100,23 @@ export default function ProductCard() {
                               )}
                             </div>
                         </div>
+                
                       ))}
+                        <ToastContainer
+                        position="top-right"
+                        autoClose={5000}
+                        hideProgressBar={false}
+                        newestOnTop={false}
+                        closeOnClick={false}
+                        rtl={false}
+                        pauseOnFocusLoss
+                        draggable
+                        pauseOnHover
+                        theme="dark"
+                        transition={Bounce}
+                        />
                       </div>
+
                   ) : (
                     <div className='flex justify-center text-center'>
                       Ops.. estamos sem produto dessa categoria

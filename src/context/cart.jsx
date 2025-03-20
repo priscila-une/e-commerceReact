@@ -1,5 +1,6 @@
 import { createContext, useState, useEffect } from 'react';
 import PropTypes from "prop-types";
+import { toast }  from "react-toastify";
 
 export const CartContext = createContext();
 
@@ -18,8 +19,13 @@ export const CartProvider = ({ children }) => {
             : cartItem
         )
       );
+
+      toast.success('Produto adicionado no carrinho.');
+
     } else {
       setCartItems([...cartItems, { ...item, quantity: 1 }]);
+      
+      toast.success('Produto adicionado no carrinho');
     }
   }
 
